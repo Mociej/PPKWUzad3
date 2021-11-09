@@ -1,6 +1,6 @@
 # PPKWU Zadanie 3 API
 
-Do tego projektu dodany został moduł z zadania 2 wykorzystujący api do tworzenia statystyk stringów stringów.
+Do tego projektu dodany został moduł z zadania 2 wykorzystujący api do tworzenia statystyk stringów.
 
 Dodaje się go w intelij klikając File > Project Structure > Project Settings > Modules.
 
