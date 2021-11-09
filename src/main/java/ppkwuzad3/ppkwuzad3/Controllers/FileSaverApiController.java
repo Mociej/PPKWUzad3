@@ -12,9 +12,17 @@ public class FileSaverApiController {
         StringApiController stringApiController = new StringApiController();
         String result = "";
 
+        String lines[] = stringApiController.stringAnalyse(input).trim().split("<br/>");
+
+//        for (int i = 0; i < lines.length; i++) {
+//            System.out.println(lines[i]);
+//        }
+
         switch (filetype) {
             case "txt":
-                result = stringApiController.stringAnalyse(input) + filetype;
+                for (int i = 0; i < lines.length; i++) {
+                    result += lines[i] + "\n";
+                }
                 break;
             case "json":
                 result = stringApiController.stringAnalyse(input) + filetype;
@@ -29,6 +37,7 @@ public class FileSaverApiController {
                 return "File type must be txt, json, xml or csv.";
         }
 
+        System.out.println(result);
         return result;
     }
 }
