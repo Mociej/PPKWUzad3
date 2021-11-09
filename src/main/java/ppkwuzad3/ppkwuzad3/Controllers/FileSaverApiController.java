@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import ppkwuzad2.ppkwuzad2.Controllers.StringApiController;
 import ppkwuzad3.ppkwuzad3.StringResultToMap;
 
+import java.beans.XMLEncoder;
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -44,7 +46,11 @@ public class FileSaverApiController {
                 }
                 break;
             case "xml":
-                result = stringApiController.stringAnalyse(input) + filetype;
+                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                XMLEncoder xmlEncoder = new XMLEncoder(byteArrayOutputStream);
+                xmlEncoder.writeObject(elements);
+                xmlEncoder.close();
+                result = byteArrayOutputStream.toString();
                 break;
             case "csv":
                 result = stringApiController.stringAnalyse(input) + filetype;
