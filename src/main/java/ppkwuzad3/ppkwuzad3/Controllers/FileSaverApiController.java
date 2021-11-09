@@ -53,13 +53,15 @@ public class FileSaverApiController {
                 result = byteArrayOutputStream.toString();
                 break;
             case "csv":
-                result = stringApiController.stringAnalyse(input) + filetype;
+                for (Map.Entry<String, String> entry : elements.entrySet()) {
+                    result += entry.getKey() + "," + entry.getValue() + "\n";
+                }
+
                 break;
             default:
                 return "File type must be txt, json, xml or csv.";
         }
 
-        System.out.println(result);
         return result;
     }
 }
