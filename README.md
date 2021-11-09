@@ -1,4 +1,4 @@
-#PPKWU Zadanie 3 API
+# PPKWU Zadanie 3 API
 
 Do tego projektu dodany został moduł z zadania 2 wykorzystujący api do tworzenia statystyk stringów stringów.
 
