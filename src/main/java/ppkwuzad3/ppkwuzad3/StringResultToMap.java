@@ -6,7 +6,6 @@ import java.util.Map;
 
 public class StringResultToMap {
     public Map<String, String> stringToMap(String tmp) {
-        tmp = tmp.replaceAll("\\s", "");
         String lines[] = tmp.trim().split("<br/>");
         ArrayList<String> data = new ArrayList<String>();
 

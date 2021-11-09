@@ -16,7 +16,7 @@ import java.util.Map;
 
 @RestController
 public class FileSaverApiController {
-    @GetMapping("/{filetype}/{input}")
+    @GetMapping("/savestatstofile/{filetype}/{input}")
     public String saveStatsToFile(@PathVariable String filetype, @PathVariable String input) {
         StringApiController stringApiController = new StringApiController();
         String result = "";
@@ -27,7 +27,6 @@ public class FileSaverApiController {
         switch (filetype) {
             case "txt":
                 String tmp = stringApiController.stringAnalyse(input);
-                tmp = tmp.replaceAll("\\s", "");
                 String lines[] = tmp.trim().split("<br/>");
 
                 for (int i = 0; i < lines.length; i++) {
